@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HalloweenBot 🎃 - Your Spooky Party Guide</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animated Background Elements -->
+  <div class="party-confetti"></div>
+  <div class="party-lights"></div>
+  
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>👻 Past Chats</h3>
+    </div>
+    <div class="past-chats-list" id="pastChatsList"></div>
+    <div class="sidebar-footer">
+      <button class="sidebar-btn" id="newChatBtn">
+        <span>🦇 New Chat</span>
+      </button>
+      <button class="sidebar-btn" id="accountBtn">
+        <span>🧛 Account</span>
+      </button>
+      <button class="sidebar-btn" id="reportBtn">
+        <span>🕷️ Feedback</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="chat-header">
+      <button class="menu-btn" id="menuBtn">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </button>
+      <span class="header-title">
+        <span class="title-emoji">🎃</span>
+        HalloweenBot
+        <span class="title-emoji">👻</span>
+      </span>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="messages-container" id="messagesContainer">
+        <div class="welcome-message">
+          <div class="welcome-icon">🎃</div>
+          <h2>Welcome to HalloweenBot!</h2>
+          <p>Your spooky guide to all the haunted fest events! 👻🦇</p>
+          <div class="welcome-suggestions">
+            <button class="suggestion-btn" onclick="sendSuggestion('Show all events')">
+              🎃 Show all events
+            </button>
+            <button class="suggestion-btn" onclick="sendSuggestion('What\'s happening now?')">
+              ⏰ What's happening now?
+            </button>
+            <button class="suggestion-btn" onclick="sendSuggestion('Next event')">
+              🦇 Next event
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Ask about spooky events... 👻" />
+        <button id="sendBtn">
+          <span>🚀 Send</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
